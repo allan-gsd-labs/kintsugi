@@ -1,10 +1,23 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import type { ReactNode } from 'react';
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Web Template',
-  description: 'allan-gsd-labs web template',
+  title: 'Kintsugi',
+  description: 'Official site for Kintsugi.',
 };
 
 export default function RootLayout({
@@ -12,8 +25,10 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-dvh bg-zinc-950 text-zinc-100">
-        <div className="mx-auto max-w-3xl p-6">{children}</div>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} min-h-dvh bg-[var(--bg-main)] text-[var(--text-primary)] antialiased`}
+      >
+        <div className="site-container">{children}</div>
       </body>
     </html>
   );

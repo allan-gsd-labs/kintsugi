@@ -12,7 +12,7 @@
 
 ## Incremental Checklist
 - [x] A) Create `tasks.md` and content JSON files with placeholders.
-- [ ] B) Add global styling tokens + layout container rules + base typography.
+- [x] B) Add global styling tokens + layout container rules + base typography.
 - [ ] C) Implement components scaffold and render one-page structure in `src/app/page.tsx`.
 - [ ] D) Implement header + active section tracking + smooth scroll + reduced motion handling.
 - [ ] E) Implement `EmailSignupForm` + `POST /api/mailing-list`.
@@ -23,7 +23,7 @@
 
 ## Validation Log
 - [x] Task A validated (typecheck + lint pass).
-- [ ] Task B validated (typecheck + lint pass).
+- [x] Task B validated (typecheck + lint pass).
 - [ ] Task C validated (typecheck + lint pass).
 - [ ] Task D validated (typecheck + lint pass).
 - [ ] Task E validated (typecheck + lint pass).
