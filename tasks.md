@@ -16,6 +16,7 @@
 - [x] C) Implement components scaffold and render one-page structure in `src/app/page.tsx`.
 - [x] D) Implement header + active section tracking + smooth scroll + reduced motion handling.
 - [x] E) Implement `EmailSignupForm` + `POST /api/mailing-list`.
+- [x] E2) Asset-driven visual polish (logo + hero image + atmospheric treatment).
 - [ ] F) Implement `GigsSection` (featured next show + collapsible past).
 - [ ] G) Implement merch grid + Stripe checkout `POST /api/checkout`.
 - [ ] H) Implement EPK + Contact + Footer CTA.
@@ -27,6 +28,7 @@
 - [x] Task C validated (typecheck + lint pass).
 - [x] Task D validated (typecheck + lint pass).
 - [x] Task E validated (typecheck + lint pass).
+- [x] Task E2 validated (typecheck + lint pass).
 - [ ] Task F validated (typecheck + lint pass).
 - [ ] Task G validated (typecheck + lint pass).
 - [ ] Task H validated (typecheck + lint pass).
