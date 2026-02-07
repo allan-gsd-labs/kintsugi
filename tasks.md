@@ -14,7 +14,7 @@
 - [x] A) Create `tasks.md` and content JSON files with placeholders.
 - [x] B) Add global styling tokens + layout container rules + base typography.
 - [x] C) Implement components scaffold and render one-page structure in `src/app/page.tsx`.
-- [ ] D) Implement header + active section tracking + smooth scroll + reduced motion handling.
+- [x] D) Implement header + active section tracking + smooth scroll + reduced motion handling.
 - [ ] E) Implement `EmailSignupForm` + `POST /api/mailing-list`.
 - [ ] F) Implement `GigsSection` (featured next show + collapsible past).
 - [ ] G) Implement merch grid + Stripe checkout `POST /api/checkout`.
@@ -25,7 +25,7 @@
 - [x] Task A validated (typecheck + lint pass).
 - [x] Task B validated (typecheck + lint pass).
 - [x] Task C validated (typecheck + lint pass).
-- [ ] Task D validated (typecheck + lint pass).
+- [x] Task D validated (typecheck + lint pass).
 - [ ] Task E validated (typecheck + lint pass).
 - [ ] Task F validated (typecheck + lint pass).
 - [ ] Task G validated (typecheck + lint pass).

@@ -1,3 +1,5 @@
+import type { MouseEvent } from 'react';
+
 type AnchorItem = {
   id: string;
   label: string;
@@ -6,9 +8,14 @@ type AnchorItem = {
 type SiteHeaderProps = {
   anchors: AnchorItem[];
   activeAnchor: string;
+  onNavigate?: (event: MouseEvent<HTMLAnchorElement>, id: string) => void;
 };
 
-export function SiteHeader({ anchors, activeAnchor }: SiteHeaderProps) {
+export function SiteHeader({
+  anchors,
+  activeAnchor,
+  onNavigate,
+}: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-border-subtle/80 bg-bg-main/90 backdrop-blur">
       <nav aria-label="Primary" className="mx-auto flex max-w-site gap-6 px-6 py-4">
@@ -19,6 +26,7 @@ export function SiteHeader({ anchors, activeAnchor }: SiteHeaderProps) {
             <a
               key={anchor.id}
               href={`#${anchor.id}`}
+              onClick={(event) => onNavigate?.(event, anchor.id)}
               className="relative text-xs uppercase tracking-[0.2em] text-text-muted hover:text-text-primary"
             >
               {anchor.label}
@@ -35,4 +43,3 @@ export function SiteHeader({ anchors, activeAnchor }: SiteHeaderProps) {
     </header>
   );
 }
-
