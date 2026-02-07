@@ -22,3 +22,8 @@ npm run dev
 
 ## Env
 Copy `.env.example` to `.env` and fill values.
+
+### Mailing list provider
+- `MAILING_LIST_PROVIDER` (optional): defaults to `console`.
+- Current supported value:
+  - `console`: logs mailing-list signups server-side.

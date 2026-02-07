@@ -10,7 +10,11 @@ export function Footer({ showSignup, socialLinks }: FooterProps) {
     <footer className="section-space border-t border-border-subtle">
       <h3 className="text-2xl">Stay in the loop</h3>
       {showSignup ? (
-        <EmailSignupForm placeholder="you@example.com" submitText="Subscribe" />
+        <EmailSignupForm
+          placeholder="you@example.com"
+          submitText="Subscribe"
+          source="footer"
+        />
       ) : null}
       <ul className="mt-8 flex flex-wrap gap-4">
         {socialLinks.map((social) => (
@@ -30,4 +34,3 @@ export function Footer({ showSignup, socialLinks }: FooterProps) {
     </footer>
   );
 }
-
