@@ -115,7 +115,7 @@ export default function Home() {
   );
 
   return (
-    <main>
+    <main className="page-shell">
       <SiteHeader
         anchors={anchors}
         activeAnchor={activeAnchor}

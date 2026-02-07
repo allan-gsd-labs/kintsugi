@@ -7,7 +7,7 @@ type FooterProps = {
 
 export function Footer({ showSignup, socialLinks }: FooterProps) {
   return (
-    <footer className="section-space border-t border-border-subtle">
+    <footer className="section-panel section-space border-t border-border-subtle px-6 py-8 md:px-8 md:py-10">
       <h3 className="text-2xl">Stay in the loop</h3>
       {showSignup ? (
         <EmailSignupForm

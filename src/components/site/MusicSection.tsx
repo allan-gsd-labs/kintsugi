@@ -6,7 +6,7 @@ type MusicSectionProps = {
 
 export function MusicSection({ bandcampEmbedUrl }: MusicSectionProps) {
   return (
-    <section id="music" className="section-space">
+    <section id="music" className="section-panel section-space px-6 py-8 md:px-8 md:py-10">
       <h2 className="max-w-2xl">Music</h2>
       <p className="mt-4 max-w-xl text-text-muted">
         Latest single: Disappointed.

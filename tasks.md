@@ -17,6 +17,15 @@
 - [x] D) Implement header + active section tracking + smooth scroll + reduced motion handling.
 - [x] E) Implement `EmailSignupForm` + `POST /api/mailing-list`.
 - [x] E2) Asset-driven visual polish (logo + hero image + atmospheric treatment).
+- [ ] E3) Design realignment to mockup direction (gritty editorial system).
+- [x] E3.1) Build page shell: stacked cards, stronger outer gutters, section panel rhythm.
+- [x] E3.2) Hero composition: distressed logotype sizing, left-aligned copy block, single CTA row.
+- [ ] E3.3) Texture treatment: unify grain/overlay system (one reusable utility, consistent opacity scale).
+- [ ] E3.4) Typography hierarchy: heavier display usage, tighter heading tracking, cleaner body contrast.
+- [ ] E3.5) Component visual pass: cards for Music/Gigs/Merch/Contact with shared border and divider language.
+- [ ] E3.6) CTA system: one primary red button style, one quiet secondary style, no mixed button patterns.
+- [ ] E3.7) Mobile pass: preserve hierarchy and panel rhythm on small screens (no cramped two-column artifacts).
+- [ ] E3.8) Asset quality checkpoint: replace weak/low-res assets if needed and normalize crops.
 - [ ] F) Implement `GigsSection` (featured next show + collapsible past).
 - [ ] G) Implement merch grid + Stripe checkout `POST /api/checkout`.
 - [ ] H) Implement EPK + Contact + Footer CTA.
@@ -29,6 +38,7 @@
 - [x] Task D validated (typecheck + lint pass).
 - [x] Task E validated (typecheck + lint pass).
 - [x] Task E2 validated (typecheck + lint pass).
+- [ ] Task E3 validated (typecheck + lint pass).
 - [ ] Task F validated (typecheck + lint pass).
 - [ ] Task G validated (typecheck + lint pass).
 - [ ] Task H validated (typecheck + lint pass).

@@ -10,7 +10,7 @@ export function ContactSection({
   socialLinks,
 }: ContactSectionProps) {
   return (
-    <section id="contact" className="section-space">
+    <section id="contact" className="section-panel section-space px-6 py-8 md:px-8 md:py-10">
       <h2>Contact</h2>
       <div className="mt-8 space-y-3 text-text-muted">
         <p>
@@ -47,4 +47,3 @@ export function ContactSection({
     </section>
   );
 }
-

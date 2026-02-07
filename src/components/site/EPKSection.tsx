@@ -24,7 +24,10 @@ export function EPKSection({
   downloads,
 }: EPKSectionProps) {
   return (
-    <section id="epk" className="section-space">
+    <section
+      id="epk"
+      className="section-panel section-space px-6 py-8 md:px-8 md:py-10"
+    >
       <h2>EPK</h2>
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <div>
@@ -36,14 +39,14 @@ export function EPKSection({
           <ul className="mt-4 space-y-2 text-text-muted">
             {members.map((member) => (
               <li key={`${member.name}-${member.role}`}>
-                {member.name} · {member.role}
+                {member.name} - {member.role}
               </li>
             ))}
           </ul>
         </div>
         <div>
           <h3>FFO</h3>
-          <p className="mt-4 text-text-muted">{ffo.join(' · ')}</p>
+          <p className="mt-4 text-text-muted">{ffo.join(' - ')}</p>
         </div>
         <div>
           <h3>Links</h3>

@@ -21,7 +21,10 @@ const formatDate = (isoDate: string) =>
 
 export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
   return (
-    <section id="gigs" className="section-space">
+    <section
+      id="gigs"
+      className="section-panel section-space px-6 py-8 md:px-8 md:py-10"
+    >
       <h2>Gigs</h2>
       <div className="mt-8 rounded-md border border-border-subtle bg-bg-surface/40 p-6">
         <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
@@ -31,7 +34,7 @@ export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
           <div className="mt-4 space-y-2">
             <p className="text-xl font-medium">{nextShow.venue}</p>
             <p className="text-text-muted">
-              {nextShow.city} · {formatDate(nextShow.date)}
+              {nextShow.city} - {formatDate(nextShow.date)}
             </p>
             {nextShow.notes ? (
               <p className="text-sm text-text-muted">{nextShow.notes}</p>
@@ -48,7 +51,7 @@ export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
         <ul className="mt-4 space-y-3">
           {pastShows.map((show) => (
             <li key={show.id} className="text-sm text-text-muted">
-              {formatDate(show.date)} · {show.venue}, {show.city}
+              {formatDate(show.date)} - {show.venue}, {show.city}
             </li>
           ))}
         </ul>
