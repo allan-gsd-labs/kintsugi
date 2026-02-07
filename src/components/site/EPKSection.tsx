@@ -26,9 +26,10 @@ export function EPKSection({
   return (
     <section
       id="epk"
-      className="section-panel section-space px-6 py-8 md:px-8 md:py-10"
+      className="section-panel texture-soft section-space px-6 py-8 md:px-8 md:py-10"
     >
-      <h2>EPK</h2>
+      <p className="section-eyebrow">Press</p>
+      <h2 className="section-heading">EPK</h2>
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <div>
           <h3>Bio</h3>
@@ -82,4 +83,3 @@ export function EPKSection({
     </section>
   );
 }
-

@@ -6,9 +6,10 @@ type MusicSectionProps = {
 
 export function MusicSection({ bandcampEmbedUrl }: MusicSectionProps) {
   return (
-    <section id="music" className="section-panel section-space px-6 py-8 md:px-8 md:py-10">
-      <h2 className="max-w-2xl">Music</h2>
-      <p className="mt-4 max-w-xl text-text-muted">
+    <section id="music" className="section-panel texture-soft section-space px-6 py-8 md:px-8 md:py-10">
+      <p className="section-eyebrow">Section</p>
+      <h2 className="section-heading max-w-2xl">Music</h2>
+      <p className="section-copy mt-4 max-w-xl">
         Latest single: Disappointed.
       </p>
       <div className="mt-8 grid items-start gap-8 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)]">
@@ -32,7 +33,7 @@ export function MusicSection({ bandcampEmbedUrl }: MusicSectionProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg-main/75 to-transparent" />
           </article>
-          <p className="max-w-xl text-text-muted">
+          <p className="section-copy max-w-xl">
             Atmospheric tension, restrained dynamics, and impact-first writing.
             Built for loud rooms and low light.
           </p>

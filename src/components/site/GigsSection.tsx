@@ -23,9 +23,10 @@ export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
   return (
     <section
       id="gigs"
-      className="section-panel section-space px-6 py-8 md:px-8 md:py-10"
+      className="section-panel texture-soft section-space px-6 py-8 md:px-8 md:py-10"
     >
-      <h2>Gigs</h2>
+      <p className="section-eyebrow">Live</p>
+      <h2 className="section-heading">Gigs</h2>
       <div className="mt-8 rounded-md border border-border-subtle bg-bg-surface/40 p-6">
         <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
           Next Show
@@ -59,4 +60,3 @@ export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
     </section>
   );
 }
-
