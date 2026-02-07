@@ -1,0 +1,71 @@
+{
+  "headline": "Kintsugi",
+  "subhead": "Cinematic metalcore from Glasgow. Built for pressure, not noise.",
+  "cta": {
+    "mailingListLabel": "Join the mailing list",
+    "submitText": "Subscribe"
+  },
+  "bandcampEmbedHtml": "<iframe style=\"border: 0; width: 350px; height: 442px;\" src=\"https://bandcamp.com/EmbeddedPlayer/track=2053798318/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://kintsugigla.bandcamp.com/track/disappointed\">Disappointed by Kintsugi</a></iframe>",
+  "emails": {
+    "booking": "booking@kintsugi.gla",
+    "general": "hello@kintsugi.gla"
+  },
+  "socials": {
+    "linktree": "https://linktr.ee/kintsugi.gla",
+    "instagram": "",
+    "facebook": "",
+    "youtube": "",
+    "spotify": "",
+    "bandcamp": "https://kintsugigla.bandcamp.com"
+  },
+  "epk": {
+    "bio": "Kintsugi is a Glasgow metalcore band shaped by tension, restraint, and impact. Their sound moves between atmospheric weight and direct aggression, with songs built for live rooms as much as headphones.",
+    "members": [
+      {
+        "name": "Member One",
+        "role": "Vocals"
+      },
+      {
+        "name": "Member Two",
+        "role": "Guitar"
+      },
+      {
+        "name": "Member Three",
+        "role": "Bass"
+      },
+      {
+        "name": "Member Four",
+        "role": "Drums"
+      }
+    ],
+    "ffo": [
+      "Architects",
+      "Loathe",
+      "Silent Planet"
+    ],
+    "links": [
+      {
+        "label": "Linktree",
+        "url": "https://linktr.ee/kintsugi.gla"
+      },
+      {
+        "label": "Bandcamp",
+        "url": "https://kintsugigla.bandcamp.com"
+      }
+    ],
+    "downloads": [
+      {
+        "label": "EPK PDF",
+        "url": "#"
+      },
+      {
+        "label": "Press Photo Pack",
+        "url": "#"
+      },
+      {
+        "label": "Stage Plot / Input List",
+        "url": "#"
+      }
+    ]
+  }
+}

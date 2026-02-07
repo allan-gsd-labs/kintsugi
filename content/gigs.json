@@ -1,0 +1,46 @@
+{
+  "upcoming": [
+    {
+      "id": "gla-spring-2026",
+      "date": "2026-03-21",
+      "venue": "Audio",
+      "city": "Glasgow, UK",
+      "ticketUrl": "#",
+      "notes": "Headline set"
+    },
+    {
+      "id": "edi-2026",
+      "date": "2026-05-08",
+      "venue": "Bannermans",
+      "city": "Edinburgh, UK",
+      "ticketUrl": "#",
+      "notes": "Support slot"
+    }
+  ],
+  "past": [
+    {
+      "id": "gla-winter-2025",
+      "date": "2025-11-14",
+      "venue": "Stereo",
+      "city": "Glasgow, UK",
+      "ticketUrl": "",
+      "notes": "Sold out"
+    },
+    {
+      "id": "dundee-2025",
+      "date": "2025-09-06",
+      "venue": "Beat Generator",
+      "city": "Dundee, UK",
+      "ticketUrl": "",
+      "notes": ""
+    },
+    {
+      "id": "gla-summer-2025",
+      "date": "2025-06-28",
+      "venue": "Broadcast",
+      "city": "Glasgow, UK",
+      "ticketUrl": "",
+      "notes": ""
+    }
+  ]
+}

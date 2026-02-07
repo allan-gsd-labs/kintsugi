@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "slug": "kintsugi-logo-shirt-black-s",
+      "title": "Kintsugi Glasgow Logo Shirt (S)",
+      "priceGBP": 2000,
+      "image": "https://f4.bcbits.com/img/0035077228_10.jpg",
+      "stripePriceId": "",
+      "sizes": [
+        "S"
+      ]
+    },
+    {
+      "slug": "kintsugi-logo-shirt-black-m",
+      "title": "Kintsugi Glasgow Logo Shirt (M)",
+      "priceGBP": 2000,
+      "image": "https://f4.bcbits.com/img/0035077228_10.jpg",
+      "stripePriceId": "",
+      "sizes": [
+        "M"
+      ]
+    },
+    {
+      "slug": "kintsugi-logo-shirt-black-l",
+      "title": "Kintsugi Glasgow Logo Shirt (L)",
+      "priceGBP": 2000,
+      "image": "https://f4.bcbits.com/img/0035077228_10.jpg",
+      "stripePriceId": "",
+      "sizes": [
+        "L"
+      ]
+    },
+    {
+      "slug": "kintsugi-logo-shirt-black-xl",
+      "title": "Kintsugi Glasgow Logo Shirt (XL)",
+      "priceGBP": 2000,
+      "image": "https://f4.bcbits.com/img/0035077228_10.jpg",
+      "stripePriceId": "",
+      "sizes": [
+        "XL"
+      ]
+    }
+  ]
+}
