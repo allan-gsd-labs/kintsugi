@@ -9,6 +9,7 @@ export function MusicSection({ bandcampEmbedUrl }: MusicSectionProps) {
     <section id="music" className="section-panel texture-soft section-space px-6 py-8 md:px-8 md:py-10">
       <p className="section-eyebrow">Section</p>
       <h2 className="section-heading max-w-2xl">Music</h2>
+      <div className="panel-divider" />
       <p className="section-copy mt-4 max-w-xl">
         Latest single: Disappointed.
       </p>

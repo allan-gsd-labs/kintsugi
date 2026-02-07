@@ -139,6 +139,74 @@ a {
   max-width: 40rem;
 }
 
+.panel-divider {
+  margin-top: 1.4rem;
+  border-top: 1px solid color-mix(in srgb, var(--border-subtle) 82%, #ffffff 18%);
+}
+
+.panel-card {
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, #ffffff 14%);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg-surface) 84%, #000000 16%);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--accent-red) 72%, #ffffff 28%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent-red) 92%, #ffffff 8%) 0%,
+    color-mix(in srgb, var(--accent-red) 86%, #000000 14%) 100%
+  );
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease,
+    opacity 150ms ease;
+}
+
+.btn-primary:hover {
+  border-color: color-mix(in srgb, var(--accent-red) 55%, #ffffff 45%);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-quiet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 78%, #ffffff 22%);
+  background: color-mix(in srgb, var(--bg-surface) 90%, #000000 10%);
+  color: var(--text-primary);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease,
+    background-color 150ms ease;
+}
+
+.btn-quiet:hover {
+  color: var(--accent-red);
+  border-color: color-mix(in srgb, var(--accent-red) 48%, #ffffff 52%);
+}
+
 @media (max-width: 768px) {
   .section-space {
     padding-block: 2rem;

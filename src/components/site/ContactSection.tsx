@@ -13,6 +13,7 @@ export function ContactSection({
     <section id="contact" className="section-panel texture-soft section-space px-6 py-8 md:px-8 md:py-10">
       <p className="section-eyebrow">Reach</p>
       <h2 className="section-heading">Contact</h2>
+      <div className="panel-divider" />
       <div className="mt-8 space-y-3 text-text-muted">
         <p>
           Booking:{' '}

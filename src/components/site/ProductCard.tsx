@@ -11,7 +11,7 @@ export function ProductCard({ title, price, image, checkoutUrl }: ProductCardPro
   const unavailable = !checkoutUrl;
 
   return (
-    <article className="overflow-hidden rounded-md border border-border-subtle bg-bg-surface/30">
+    <article className="panel-card overflow-hidden">
       <Image
         src={image}
         alt={title}
@@ -29,7 +29,7 @@ export function ProductCard({ title, price, image, checkoutUrl }: ProductCardPro
         ) : (
           <a
             href={checkoutUrl}
-            className="inline-block text-sm uppercase tracking-[0.18em] text-text-primary transition-colors duration-150 hover:text-accent-red"
+            className="btn-quiet"
           >
             Checkout
           </a>

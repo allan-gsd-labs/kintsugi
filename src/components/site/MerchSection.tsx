@@ -23,6 +23,7 @@ export function MerchSection({ products }: MerchSectionProps) {
     <section id="merch" className="section-panel texture-soft section-space px-6 py-8 md:px-8 md:py-10">
       <p className="section-eyebrow">Store</p>
       <h2 className="section-heading">Merch</h2>
+      <div className="panel-divider" />
       <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
           <ProductCard

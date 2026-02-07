@@ -30,6 +30,7 @@ export function EPKSection({
     >
       <p className="section-eyebrow">Press</p>
       <h2 className="section-heading">EPK</h2>
+      <div className="panel-divider" />
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <div>
           <h3>Bio</h3>

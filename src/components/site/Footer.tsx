@@ -10,6 +10,7 @@ export function Footer({ showSignup, socialLinks }: FooterProps) {
     <footer className="section-panel texture-soft section-space border-t border-border-subtle px-6 py-8 md:px-8 md:py-10">
       <p className="section-eyebrow">Mailing List</p>
       <h3 className="text-2xl">Stay in the loop</h3>
+      <div className="panel-divider" />
       {showSignup ? (
         <EmailSignupForm
           placeholder="you@example.com"

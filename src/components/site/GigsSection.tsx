@@ -27,6 +27,7 @@ export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
     >
       <p className="section-eyebrow">Live</p>
       <h2 className="section-heading">Gigs</h2>
+      <div className="panel-divider" />
       <div className="mt-8 rounded-md border border-border-subtle bg-bg-surface/40 p-6">
         <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
           Next Show
@@ -37,6 +38,11 @@ export function GigsSection({ nextShow, pastShows }: GigsSectionProps) {
             <p className="text-text-muted">
               {nextShow.city} - {formatDate(nextShow.date)}
             </p>
+            {nextShow.ticketUrl ? (
+              <a href={nextShow.ticketUrl} className="btn-primary mt-3">
+                Get tickets
+              </a>
+            ) : null}
             {nextShow.notes ? (
               <p className="text-sm text-text-muted">{nextShow.notes}</p>
             ) : null}

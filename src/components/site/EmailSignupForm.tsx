@@ -67,7 +67,7 @@ export function EmailSignupForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-10 max-w-xl rounded-md border border-border-subtle bg-bg-surface/50 p-4 md:p-5"
+      className="panel-card mt-10 max-w-xl p-4 md:p-5"
     >
       <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
         <div className="space-y-2">
@@ -87,13 +87,13 @@ export function EmailSignupForm({
             className="w-full rounded-md border border-border-subtle bg-bg-main px-3 py-2 text-text-primary placeholder:text-text-muted"
           />
         </div>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="h-[42px] rounded-md border border-border-subtle px-4 py-2 text-sm text-text-primary transition-colors duration-150 hover:border-accent-red hover:text-accent-red"
-        >
-          {isSubmitting ? 'Submitting...' : submitText}
-        </button>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="btn-primary"
+          >
+            {isSubmitting ? 'Submitting...' : submitText}
+          </button>
       </div>
       <div className="sr-only" aria-hidden>
         <label htmlFor={honeypotInputId}>Leave this field empty</label>
