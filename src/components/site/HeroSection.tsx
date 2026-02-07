@@ -15,9 +15,12 @@ export function HeroSection({ headline, subhead, showSignup }: HeroSectionProps)
       <h1 className="max-w-3xl">{headline}</h1>
       <p className="mt-6 max-w-2xl text-lg text-text-muted">{subhead}</p>
       {showSignup ? (
-        <EmailSignupForm placeholder="you@example.com" submitText="Subscribe" />
+        <EmailSignupForm
+          placeholder="you@example.com"
+          submitText="Subscribe"
+          source="hero"
+        />
       ) : null}
     </section>
   );
 }
-
