@@ -5,6 +5,7 @@
     "mailingListLabel": "Join the mailing list",
     "submitText": "Subscribe"
   },
+  "bandcampEmbedUrl": "https://bandcamp.com/EmbeddedPlayer/track=2053798318/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/",
   "bandcampEmbedHtml": "<iframe style=\"border: 0; width: 350px; height: 442px;\" src=\"https://bandcamp.com/EmbeddedPlayer/track=2053798318/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/\" seamless><a href=\"https://kintsugigla.bandcamp.com/track/disappointed\">Disappointed by Kintsugi</a></iframe>",
   "emails": {
     "booking": "booking@kintsugi.gla",
