@@ -1,0 +1,75 @@
+{
+  "upcoming": [
+    {
+      "date": "2026-05-17",
+      "venue": "Ivory Blacks",
+      "city": "Glasgow",
+      "address": "73 Oswald St, Glasgow",
+      "status": "Tickets live",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2026-07-03",
+      "venue": "Audio",
+      "city": "Glasgow",
+      "address": "14 Midland St, Glasgow",
+      "status": "Limited entry",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2026-09-12",
+      "venue": "The Key Club",
+      "city": "Leeds",
+      "address": "66 Merrion St, Leeds",
+      "status": "On sale soon",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2026-10-02",
+      "venue": "The Garage",
+      "city": "Glasgow",
+      "address": "490 Sauchiehall St, Glasgow",
+      "status": "Tickets live",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2026-11-14",
+      "venue": "The Cluny",
+      "city": "Newcastle",
+      "address": "36 Lime St, Newcastle upon Tyne",
+      "status": "Low tickets",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2026-12-05",
+      "venue": "The Mash House",
+      "city": "Edinburgh",
+      "address": "37 Guthrie St, Edinburgh",
+      "status": "On sale soon",
+      "ticketsUrl": "#"
+    }
+  ],
+  "past": [
+    {
+      "date": "2025-11-10",
+      "venue": "King Tuts",
+      "city": "Glasgow",
+      "address": "272A St Vincent St, Glasgow",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2025-08-28",
+      "venue": "Stereo",
+      "city": "Glasgow",
+      "address": "22 Renfield Ln, Glasgow",
+      "ticketsUrl": "#"
+    },
+    {
+      "date": "2025-06-14",
+      "venue": "Broadcast",
+      "city": "Glasgow",
+      "address": "427 Sauchiehall St, Glasgow",
+      "ticketsUrl": "#"
+    }
+  ]
+}

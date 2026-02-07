@@ -1,0 +1,67 @@
+{
+  "headline": "KINTSUGI",
+  "description": "Modern metalcore from Glasgow with sharp hooks, heavy drops, and live sets built to hit hard.",
+  "mailingList": {
+    "headline": "Join the mailing list.",
+    "subhead": "First to hear new drops and ticket alerts.",
+    "placeholder": "Email address",
+    "submitText": "Join"
+  },
+  "bandcamp": {
+    "embedUrl": "https://bandcamp.com/EmbeddedPlayer/track=2053798318/size=large/bgcol=ffffff/linkcol=de270f/tracklist=false/artwork=small/transparent=true/"
+  },
+  "heroCampaign": {
+    "isActive": true,
+    "label": "Next single",
+    "title": "Fading Echoes",
+    "subtitle": "Out February 12, 2026. Pre-save for day-one access.",
+    "image": "/assets/epk-fading-echoes.jpg",
+    "primaryCtaLabel": "Pre-save now",
+    "primaryCtaUrl": "https://open.spotify.com/"
+  },
+  "pressStrip": ["BBC Introducing", "Kerrang! Radio", "Metal Hammer UK", "Knotfest Picks"],
+  "release": {
+    "title": "Disappointed",
+    "subtitle": "Single",
+    "date": "April 2026",
+    "description": "A pressure-cooker track built on tense verses, a wide chorus hook, and a final section that collapses into noise and resolve.",
+    "details": [
+      { "label": "Runtime", "value": "3:31" },
+      { "label": "Produced by", "value": "Kintsugi" },
+      { "label": "Mix", "value": "DMM Studio" },
+      { "label": "Master", "value": "Atlas Audio" }
+    ],
+    "artwork": "/assets/epk-fading-echoes.jpg",
+    "links": [
+      { "label": "Spotify", "url": "https://open.spotify.com/" },
+      { "label": "Apple Music", "url": "https://music.apple.com/" },
+      { "label": "Bandcamp", "url": "https://kintsugigla.bandcamp.com/" },
+      { "label": "YouTube", "url": "https://youtube.com/" }
+    ]
+  },
+  "proof": {
+    "quote": "Kintsugi deliver modern metalcore with real emotional weight and a live set that never lets up.",
+    "source": "North Scene Editorial",
+    "highlights": [
+      { "label": "Independent streams", "value": "120k+" },
+      { "label": "Monthly listeners", "value": "5.4k" },
+      { "label": "Recent support", "value": "Sold out local bill" },
+      { "label": "Current campaign", "value": "Disappointed single" }
+    ]
+  },
+  "emails": {
+    "booking": "booking@kintsugiband.com",
+    "management": "management@kintsugiband.com",
+    "general": "kintsugiband@gmail.com"
+  },
+  "socials": [
+    { "label": "Instagram", "url": "https://instagram.com/" },
+    { "label": "Bandcamp", "url": "https://kintsugigla.bandcamp.com/" },
+    { "label": "Spotify", "url": "https://open.spotify.com/" },
+    { "label": "YouTube", "url": "https://youtube.com/" },
+    { "label": "TikTok", "url": "https://tiktok.com/" }
+  ],
+  "footer": {
+    "copyright": "Kintsugi. Built in Glasgow."
+  }
+}

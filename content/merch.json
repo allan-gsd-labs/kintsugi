@@ -1,0 +1,33 @@
+{
+  "featured": [
+    {
+      "slug": "kintsugi-logo-shirt-black",
+      "title": "Logo Shirt - Black",
+      "priceGBP": 2000,
+      "image": "/assets/merch-thorns.jpg",
+      "description": "Heavyweight black tee with front logo print.",
+      "productUrl": "https://kintsugigla.bandcamp.com/merch/kintsugi-glasgow-metalcore-logo-shirt",
+      "stripePriceId": "price_mock_logo_shirt",
+      "sizes": ["S", "M", "L", "XL"]
+    },
+    {
+      "slug": "kintsugi-fading-echoes-poster",
+      "title": "Fading Echoes Poster",
+      "priceGBP": 1200,
+      "image": "/assets/epk-fading-echoes.jpg",
+      "description": "A2 matte stock poster print.",
+      "productUrl": "https://kintsugigla.bandcamp.com/",
+      "stripePriceId": null
+    },
+    {
+      "slug": "kintsugi-wordmark-hoodie",
+      "title": "Wordmark Hoodie",
+      "priceGBP": 4000,
+      "image": "/assets/wordmark.jpg",
+      "description": "Midweight hoodie with chest wordmark and back detail.",
+      "productUrl": "https://kintsugigla.bandcamp.com/",
+      "stripePriceId": null,
+      "sizes": ["M", "L", "XL"]
+    }
+  ]
+}
