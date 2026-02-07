@@ -197,9 +197,10 @@ a {
 }
 
 .k-mobile-nav-open {
-  max-height: 380px;
+  max-height: min(70svh, 560px);
   opacity: 1;
   pointer-events: auto;
+  overflow: auto;
   border-top-color: var(--border-subtle);
 }
 
@@ -682,7 +683,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 260px;
+  min-height: 210px;
 }
 
 .k-gigs-upcoming-grid {
@@ -1238,7 +1239,7 @@ a {
   }
 
   .k-hero-campaign-row {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: 1fr;
     gap: 0.6rem;
   }
 
@@ -1253,7 +1254,7 @@ a {
   }
 
   .k-hero-campaign-actions {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .k-hero-rail {
@@ -1263,6 +1264,31 @@ a {
 
   .k-hero-press-row {
     gap: 0.35rem;
+  }
+
+  .k-release-details,
+  .k-proof-grid,
+  .k-fact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .k-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .k-show-card {
+    min-height: 0;
+  }
+
+  .k-show-venue {
+    padding-right: 0;
+  }
+
+  .k-show-status {
+    position: static;
+    margin: 0 0 0.45rem 0;
   }
 
   .k-epk-nav {
