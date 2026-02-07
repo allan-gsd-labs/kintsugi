@@ -67,24 +67,33 @@ export function EmailSignupForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-10 max-w-xl space-y-4 rounded-md border border-border-subtle bg-bg-surface/40 p-4"
+      className="mt-10 max-w-xl rounded-md border border-border-subtle bg-bg-surface/50 p-4 md:p-5"
     >
-      <div className="space-y-2">
-        <label htmlFor={emailInputId} className="text-sm text-text-muted">
-          Email address
-        </label>
-        <input
-          id={emailInputId}
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          placeholder={placeholder}
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
+      <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
+        <div className="space-y-2">
+          <label htmlFor={emailInputId} className="text-sm text-text-muted">
+            Email address
+          </label>
+          <input
+            id={emailInputId}
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder={placeholder}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            disabled={isSubmitting}
+            className="w-full rounded-md border border-border-subtle bg-bg-main px-3 py-2 text-text-primary placeholder:text-text-muted"
+          />
+        </div>
+        <button
+          type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-md border border-border-subtle bg-bg-main px-3 py-2 text-text-primary placeholder:text-text-muted"
-        />
+          className="h-[42px] rounded-md border border-border-subtle px-4 py-2 text-sm text-text-primary transition-colors duration-150 hover:border-accent-red hover:text-accent-red"
+        >
+          {isSubmitting ? 'Submitting...' : submitText}
+        </button>
       </div>
       <div className="sr-only" aria-hidden>
         <label htmlFor={honeypotInputId}>Leave this field empty</label>
@@ -98,17 +107,10 @@ export function EmailSignupForm({
           onChange={(event) => setWebsite(event.target.value)}
         />
       </div>
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="rounded-md border border-border-subtle px-4 py-2 text-sm text-text-primary transition-colors duration-150 hover:border-accent-red hover:text-accent-red"
-      >
-        {isSubmitting ? 'Submitting...' : submitText}
-      </button>
       <p
         role="status"
         aria-live="polite"
-        className={`text-sm ${
+        className={`mt-3 text-sm ${
           status === 'error' ? 'text-accent-red' : 'text-text-muted'
         }`}
       >

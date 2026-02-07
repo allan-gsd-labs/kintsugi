@@ -9,30 +9,30 @@ type HeroSectionProps = {
 
 export function HeroSection({ headline, subhead, showSignup }: HeroSectionProps) {
   return (
-    <section id="home" className="section-space pt-10">
-      <div className="relative min-h-[540px] overflow-hidden rounded-lg border border-border-subtle bg-bg-surface/40 p-6 md:min-h-[620px] md:p-10">
+    <section id="home" className="section-space pt-8">
+      <div className="relative min-h-[560px] overflow-hidden rounded-lg border border-border-subtle bg-bg-surface/30 p-6 md:min-h-[640px] md:p-12">
         <Image
           src="/assets/images/hero-main-1.jpg"
           alt="Kintsugi band atmospheric portrait"
           fill
           priority
-          className="object-cover opacity-35"
+          className="object-cover object-center opacity-32"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-main/60 via-bg-main/55 to-bg-main/95" />
-        <div className="relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-main/40 via-bg-main/60 to-bg-main/95" />
+        <div className="relative z-10 flex min-h-[520px] flex-col justify-end md:min-h-[560px]">
           <Image
             src="/assets/images/logo-white-transparent.png"
             alt="Kintsugi logo"
             width={260}
             height={80}
-            className="h-auto w-44 md:w-56"
+            className="h-auto w-40 md:w-52"
             priority
           />
-          <p className="mt-8 text-xs uppercase tracking-[0.2em] text-text-muted">
+          <p className="mt-10 text-xs uppercase tracking-[0.24em] text-text-muted">
             Glasgow, UK
           </p>
-          <h1 className="mt-4 max-w-3xl">{headline}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-text-muted">{subhead}</p>
+          <h1 className="mt-4 max-w-2xl">{headline}</h1>
+          <p className="mt-5 max-w-xl text-lg text-text-muted">{subhead}</p>
           {showSignup ? (
             <EmailSignupForm
               placeholder="you@example.com"
