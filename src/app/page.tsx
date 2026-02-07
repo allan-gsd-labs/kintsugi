@@ -1,3 +1,7 @@
+'use client';
+
+import type { MouseEvent } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ContactSection } from '@/components/site/ContactSection';
 import { EPKSection } from '@/components/site/EPKSection';
 import { Footer } from '@/components/site/Footer';
@@ -47,11 +51,76 @@ const bandcampEmbedUrl =
   'https://bandcamp.com/EmbeddedPlayer/track=2053798318/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/';
 
 export default function Home() {
+  const [activeAnchor, setActiveAnchor] = useState('home');
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const sectionIds = useMemo(() => anchors.map((anchor) => anchor.id), []);
   const nextShow = findNextShow(gigsData.upcoming as Gig[]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener('change', updatePreference);
+
+    return () => mediaQuery.removeEventListener('change', updatePreference);
+  }, []);
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (!sections.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible[0]?.target.id) {
+          setActiveAnchor(visible[0].target.id);
+        }
+      },
+      {
+        threshold: [0.1, 0.25, 0.5, 0.75],
+        rootMargin: '-35% 0px -45% 0px',
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [sectionIds]);
+
+  const handleNavigate = useCallback(
+    (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+      const target = document.getElementById(id);
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      });
+      window.history.replaceState(null, '', `#${id}`);
+      setActiveAnchor(id);
+    },
+    [prefersReducedMotion],
+  );
 
   return (
     <main>
-      <SiteHeader anchors={anchors} activeAnchor="home" />
+      <SiteHeader
+        anchors={anchors}
+        activeAnchor={activeAnchor}
+        onNavigate={handleNavigate}
+      />
       <HeroSection
         headline={siteData.headline}
         subhead={siteData.subhead}
