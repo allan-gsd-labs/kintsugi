@@ -171,6 +171,31 @@ export default function EpkPage() {
             <a href="/assets/main1-v2.jpg" download className="k-chip-link">
               Download press photo
             </a>
+            <a href="/assets/epk-fading-echoes.jpg" download className="k-chip-link">
+              Download artwork
+            </a>
+            <a href="/epk/one-sheet" target="_blank" rel="noreferrer" className="k-chip-link">
+              Open one-sheet (PDF print)
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <section className="k-wrap k-section k-epk-toolkit">
+        <article className="k-contact-card">
+          <p className="k-overline">Press toolkit</p>
+          <h2 className="k-heading-md">Ready-to-send assets</h2>
+          <p className="k-copy">Open the one-sheet in a new tab and use browser print to save as PDF.</p>
+          <div className="k-chip-row">
+            <a href="/epk/one-sheet" target="_blank" rel="noreferrer" className="k-button k-button-solid">
+              One-sheet
+            </a>
+            <a href="/assets/main1-v2.jpg" download className="k-chip-link">
+              Press photo
+            </a>
+            <a href="/assets/white-transparent-v2.png" download className="k-chip-link">
+              Logo PNG
+            </a>
           </div>
         </article>
       </section>

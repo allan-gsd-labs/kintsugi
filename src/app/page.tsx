@@ -400,6 +400,45 @@ function SiteHeader({ activeAnchor, progress }: { activeAnchor: string; progress
   );
 }
 
+function SectionHeading({
+  overline,
+  title,
+  copy,
+  wave = false,
+}: {
+  overline: string;
+  title: string;
+  copy?: string;
+  wave?: boolean;
+}) {
+  return (
+    <div className="k-section-head">
+      <p className="k-overline k-reveal k-reveal-d0" data-reveal>
+        {overline}
+      </p>
+      <span className="k-section-divider k-reveal k-reveal-d1" data-reveal aria-hidden />
+      <h2 className="k-heading-xl k-reveal k-reveal-d2" data-reveal>
+        {title}
+      </h2>
+      {copy ? (
+        <p className="k-copy k-max-copy k-reveal k-reveal-d3" data-reveal>
+          {copy}
+        </p>
+      ) : null}
+      {wave ? (
+        <div className="k-waveform k-reveal k-reveal-d4" data-reveal aria-hidden>
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 function HeroSection({ content }: { content: SiteContent }) {
   const hasCampaign = Boolean(content.heroCampaign?.isActive);
 
@@ -504,7 +543,7 @@ function HeroSection({ content }: { content: SiteContent }) {
 
 function MusicSection({ content }: { content: SiteContent }) {
   return (
-    <section id="music" className="k-wrap k-section k-section-first k-release-grid">
+    <section id="music" className="k-wrap k-section k-section-first k-release-grid k-section-atmo k-section-atmo-release">
       <div className="k-release-art-wrap k-card-elevate k-reveal k-reveal-d0" data-reveal>
         <Image
           src={content.release.artwork}
@@ -516,8 +555,7 @@ function MusicSection({ content }: { content: SiteContent }) {
       </div>
 
       <div className="k-release-content k-card-elevate k-reveal k-reveal-d1" data-reveal>
-        <p className="k-overline">Latest release</p>
-        <h2 className="k-heading-xl">{content.release.title}</h2>
+        <SectionHeading overline="Latest release" title={content.release.title} wave />
         <p className="k-release-meta">
           {content.release.subtitle} | {content.release.date}
         </p>
@@ -549,7 +587,8 @@ function MusicSection({ content }: { content: SiteContent }) {
 
 function SocialProofSection({ content }: { content: SiteContent['proof'] }) {
   return (
-    <section className="k-wrap k-section k-proof">
+    <section className="k-wrap k-section k-proof k-section-atmo k-section-atmo-proof">
+      <SectionHeading overline="Proof" title="Momentum" />
       <blockquote className="k-card-elevate k-reveal k-reveal-d0" data-reveal>
         <p>"{content.quote}"</p>
         <cite>{content.source}</cite>
@@ -575,18 +614,13 @@ function GigsSection({ upcomingShows, pastShows }: { upcomingShows: Gig[]; pastS
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="gigs" className="k-wrap k-section">
-      <div className="k-section-head">
-        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
-          Live
-        </p>
-        <h2 className="k-heading-xl k-reveal k-reveal-d1" data-reveal>
-          Upcoming
-        </h2>
-        <p className="k-copy k-max-copy k-reveal k-reveal-d2" data-reveal>
-          Tour windows and one-off nights are announced first to the list.
-        </p>
-      </div>
+    <section id="gigs" className="k-wrap k-section k-section-atmo k-section-atmo-live">
+      <SectionHeading
+        overline="Live"
+        title="Upcoming"
+        copy="Tour windows and one-off nights are announced first to the list."
+        wave
+      />
 
       {upcomingShows.length > 0 ? (
         <div className="k-gigs-upcoming-grid">
@@ -729,15 +763,8 @@ function MerchSection({ products }: { products: Product[] }) {
   }
 
   return (
-    <section id="merch" className="k-wrap k-section">
-      <div className="k-section-head">
-        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
-          Store
-        </p>
-        <h2 className="k-heading-xl k-reveal k-reveal-d1" data-reveal>
-          Merch
-        </h2>
-      </div>
+    <section id="merch" className="k-wrap k-section k-section-atmo k-section-atmo-store">
+      <SectionHeading overline="Store" title="Merch" />
 
       {status ? (
         <p className="k-banner" role="status" aria-live="polite">
@@ -768,17 +795,13 @@ function MerchSection({ products }: { products: Product[] }) {
 
 function ContactSection({ emails, socials }: { emails: SiteContent['emails']; socials: Social[] }) {
   return (
-    <section id="contact" className="k-wrap k-section k-contact-grid">
+    <section id="contact" className="k-wrap k-section k-contact-grid k-section-atmo k-section-atmo-contact">
       <div>
-        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
-          Contact
-        </p>
-        <h2 className="k-heading-xl k-reveal k-reveal-d1" data-reveal>
-          Bookings and inquiries
-        </h2>
-        <p className="k-copy k-max-copy k-reveal k-reveal-d2" data-reveal>
-          For tours, features, sync, and collaborations use the addresses below.
-        </p>
+        <SectionHeading
+          overline="Contact"
+          title="Bookings and inquiries"
+          copy="For tours, features, sync, and collaborations use the addresses below."
+        />
       </div>
 
       <div className="k-contact-card k-card-elevate k-reveal k-reveal-d3" data-reveal>
