@@ -201,10 +201,12 @@ function EmailSignupForm({
   idPrefix,
   placeholder,
   submitText,
+  layout = 'inline',
 }: {
   idPrefix: string;
   placeholder: string;
   submitText: string;
+  layout?: 'inline' | 'stacked';
 }) {
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
@@ -242,26 +244,47 @@ function EmailSignupForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="k-signup" noValidate>
+    <form onSubmit={onSubmit} className={`k-signup ${layout === 'stacked' ? 'k-signup-stacked' : ''}`} noValidate>
       <label htmlFor={`${idPrefix}-email`} className="sr-only">
         Email address
       </label>
-      <div className="k-signup-row">
-        <input
-          id={`${idPrefix}-email`}
-          type="email"
-          required
-          value={email}
-          onChange={(event) => setEmail(event.currentTarget.value)}
-          autoComplete="email"
-          inputMode="email"
-          placeholder={placeholder}
-          className="k-input k-input-main"
-        />
-        <button type="submit" disabled={isSubmitting} className="k-button k-button-solid">
-          {isSubmitting ? 'Joining...' : submitText}
-        </button>
-      </div>
+      {layout === 'stacked' ? (
+        <div className="k-signup-stack">
+          <input
+            id={`${idPrefix}-email`}
+            type="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.currentTarget.value)}
+            autoComplete="email"
+            inputMode="email"
+            placeholder={placeholder}
+            className="k-input k-input-main"
+          />
+          <div className="k-signup-actions">
+            <button type="submit" disabled={isSubmitting} className="k-button k-button-solid">
+              {isSubmitting ? 'Joining...' : submitText}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="k-signup-row">
+          <input
+            id={`${idPrefix}-email`}
+            type="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.currentTarget.value)}
+            autoComplete="email"
+            inputMode="email"
+            placeholder={placeholder}
+            className="k-input k-input-main"
+          />
+          <button type="submit" disabled={isSubmitting} className="k-button k-button-solid">
+            {isSubmitting ? 'Joining...' : submitText}
+          </button>
+        </div>
+      )}
 
       <div className="sr-only" aria-hidden="true">
         <label htmlFor={`${idPrefix}-company`}>Company</label>
@@ -387,10 +410,10 @@ function HeroSection({ content }: { content: SiteContent }) {
       <div className="k-hero-texture" />
 
       <div className="k-wrap k-hero-inner">
-        <p className="k-overline k-reveal is-visible" data-reveal>
+        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
           Glasgow, Scotland
         </p>
-        <div className="k-hero-logo-wrap k-reveal is-visible" data-reveal>
+        <div className="k-hero-logo-wrap k-reveal k-reveal-d1" data-reveal>
           <Image
             src="/assets/white-transparent-v2.png"
             alt="Kintsugi"
@@ -401,14 +424,17 @@ function HeroSection({ content }: { content: SiteContent }) {
           />
         </div>
         <h1 className="sr-only">{content.headline}</h1>
-        <p className="k-hero-description k-reveal is-visible" data-reveal>
+        <p className="k-hero-description k-reveal k-reveal-d2" data-reveal>
           {content.description}
         </p>
 
-        <div className={`k-hero-rail k-reveal is-visible ${hasCampaign ? '' : 'k-hero-rail-signup-only'}`} data-reveal>
+        <div className={`k-hero-rail k-reveal k-reveal-d3 ${hasCampaign ? '' : 'k-hero-rail-signup-only'}`} data-reveal>
           {content.heroCampaign?.isActive ? (
-            <article className="k-hero-campaign k-hero-tile" aria-label="Featured campaign">
-              <div className="k-hero-campaign-row">
+            <article className="k-hero-campaign k-hero-tile k-card-elevate" aria-label="Featured campaign">
+              <div className="k-hero-tile-head">
+                <p className="k-overline">{content.heroCampaign.label}</p>
+              </div>
+              <div className="k-hero-tile-body">
                 <div className="k-hero-campaign-main">
                   {content.heroCampaign.image ? (
                     <div className="k-hero-campaign-thumb">
@@ -422,41 +448,45 @@ function HeroSection({ content }: { content: SiteContent }) {
                     </div>
                   ) : null}
                   <div className="k-hero-campaign-body">
-                    <p className="k-overline">{content.heroCampaign.label}</p>
                     <h2 className="k-hero-campaign-title">{content.heroCampaign.title}</h2>
                     {content.heroCampaign.subtitle ? (
                       <p className="k-hero-campaign-subtitle">{content.heroCampaign.subtitle}</p>
                     ) : null}
+                    <div className="k-hero-campaign-cta">
+                      <a
+                        href={content.heroCampaign.primaryCtaUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="k-button k-button-solid"
+                      >
+                        {content.heroCampaign.primaryCtaLabel}
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="k-hero-campaign-actions">
-                  <a
-                    href={content.heroCampaign.primaryCtaUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="k-button k-button-solid"
-                  >
-                    {content.heroCampaign.primaryCtaLabel}
-                  </a>
                 </div>
               </div>
             </article>
           ) : null}
 
-          <div className="k-hero-signup k-hero-tile">
-            <p className="k-signup-title">
-              {content.mailingList.headline} {content.mailingList.subhead}
-            </p>
-            <EmailSignupForm
-              idPrefix="hero"
-              placeholder={content.mailingList.placeholder}
-              submitText={content.mailingList.submitText}
-            />
-          </div>
+          <article className="k-hero-signup k-hero-tile k-card-elevate">
+            <div className="k-hero-tile-head">
+              <p className="k-signup-title">
+                {content.mailingList.headline} {content.mailingList.subhead}
+              </p>
+            </div>
+            <div className="k-hero-tile-body">
+              <EmailSignupForm
+                idPrefix="hero"
+                placeholder={content.mailingList.placeholder}
+                submitText={content.mailingList.submitText}
+                layout="stacked"
+              />
+            </div>
+          </article>
         </div>
 
         {content.pressStrip?.length ? (
-          <div className="k-hero-press k-reveal is-visible" data-reveal>
+          <div className="k-hero-press k-reveal k-reveal-d4" data-reveal>
             <p className="k-overline">As heard on</p>
             <div className="k-hero-press-row" aria-label="Press highlights">
               {content.pressStrip.map((item) => (
@@ -474,8 +504,8 @@ function HeroSection({ content }: { content: SiteContent }) {
 
 function MusicSection({ content }: { content: SiteContent }) {
   return (
-    <section id="music" className="k-wrap k-section k-section-first k-release-grid k-reveal" data-reveal>
-      <div className="k-release-art-wrap k-card-elevate">
+    <section id="music" className="k-wrap k-section k-section-first k-release-grid">
+      <div className="k-release-art-wrap k-card-elevate k-reveal k-reveal-d0" data-reveal>
         <Image
           src={content.release.artwork}
           alt={`${content.release.title} artwork`}
@@ -485,7 +515,7 @@ function MusicSection({ content }: { content: SiteContent }) {
         />
       </div>
 
-      <div className="k-release-content k-card-elevate">
+      <div className="k-release-content k-card-elevate k-reveal k-reveal-d1" data-reveal>
         <p className="k-overline">Latest release</p>
         <h2 className="k-heading-xl">{content.release.title}</h2>
         <p className="k-release-meta">
@@ -519,14 +549,19 @@ function MusicSection({ content }: { content: SiteContent }) {
 
 function SocialProofSection({ content }: { content: SiteContent['proof'] }) {
   return (
-    <section className="k-wrap k-section k-proof k-reveal" data-reveal>
-      <blockquote className="k-card-elevate">
+    <section className="k-wrap k-section k-proof">
+      <blockquote className="k-card-elevate k-reveal k-reveal-d0" data-reveal>
         <p>"{content.quote}"</p>
         <cite>{content.source}</cite>
       </blockquote>
       <div className="k-proof-grid">
-        {content.highlights.map((highlight) => (
-          <article key={highlight.label} className="k-card-elevate">
+        {content.highlights.map((highlight, index) => (
+          <article
+            key={highlight.label}
+            className="k-card-elevate k-reveal"
+            data-reveal
+            style={{ transitionDelay: `${80 + index * 80}ms` }}
+          >
             <p>{highlight.value}</p>
             <span>{highlight.label}</span>
           </article>
@@ -540,11 +575,17 @@ function GigsSection({ upcomingShows, pastShows }: { upcomingShows: Gig[]; pastS
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="gigs" className="k-wrap k-section k-reveal" data-reveal>
+    <section id="gigs" className="k-wrap k-section">
       <div className="k-section-head">
-        <p className="k-overline">Live</p>
-        <h2 className="k-heading-xl">Upcoming</h2>
-        <p className="k-copy k-max-copy">Tour windows and one-off nights are announced first to the list.</p>
+        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
+          Live
+        </p>
+        <h2 className="k-heading-xl k-reveal k-reveal-d1" data-reveal>
+          Upcoming
+        </h2>
+        <p className="k-copy k-max-copy k-reveal k-reveal-d2" data-reveal>
+          Tour windows and one-off nights are announced first to the list.
+        </p>
       </div>
 
       {upcomingShows.length > 0 ? (
@@ -552,7 +593,9 @@ function GigsSection({ upcomingShows, pastShows }: { upcomingShows: Gig[]; pastS
           {upcomingShows.map((show, index) => (
             <article
               key={`${show.date}-${show.venue}`}
-              className={`k-show-card k-card-elevate ${index < 3 ? 'k-show-card-featured' : ''}`}
+              className={`k-show-card k-card-elevate k-reveal ${index < 3 ? 'k-show-card-featured' : ''}`}
+              data-reveal
+              style={{ transitionDelay: `${160 + index * 80}ms` }}
             >
               {show.status ? (
                 <p className={`k-show-status ${show.status.toLowerCase().replace(/\s+/g, '-')}`}>{show.status}</p>
@@ -599,15 +642,17 @@ function ProductCard({
   product,
   onCheckout,
   isPending,
+  revealDelay,
 }: {
   product: Product;
   onCheckout: (product: Product) => Promise<void>;
   isPending: boolean;
+  revealDelay?: number;
 }) {
   const unavailable = !product.stripePriceId;
 
   return (
-    <article className="k-product">
+    <article className="k-product k-card-elevate k-reveal" data-reveal style={{ transitionDelay: `${revealDelay ?? 0}ms` }}>
       <div className="k-product-image-wrap">
         {unavailable ? <span className="k-unavailable-badge">Unavailable</span> : null}
         <Image
@@ -684,10 +729,14 @@ function MerchSection({ products }: { products: Product[] }) {
   }
 
   return (
-    <section id="merch" className="k-wrap k-section k-reveal" data-reveal>
+    <section id="merch" className="k-wrap k-section">
       <div className="k-section-head">
-        <p className="k-overline">Store</p>
-        <h2 className="k-heading-xl">Merch</h2>
+        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
+          Store
+        </p>
+        <h2 className="k-heading-xl k-reveal k-reveal-d1" data-reveal>
+          Merch
+        </h2>
       </div>
 
       {status ? (
@@ -703,12 +752,13 @@ function MerchSection({ products }: { products: Product[] }) {
       ) : null}
 
       <div className="k-merch-grid">
-        {products.map((product) => (
+        {products.map((product, index) => (
           <ProductCard
             key={product.slug}
             product={product}
             onCheckout={handleCheckout}
             isPending={pendingProduct === product.slug}
+            revealDelay={160 + index * 80}
           />
         ))}
       </div>
@@ -718,14 +768,20 @@ function MerchSection({ products }: { products: Product[] }) {
 
 function ContactSection({ emails, socials }: { emails: SiteContent['emails']; socials: Social[] }) {
   return (
-    <section id="contact" className="k-wrap k-section k-contact-grid k-reveal" data-reveal>
+    <section id="contact" className="k-wrap k-section k-contact-grid">
       <div>
-        <p className="k-overline">Contact</p>
-        <h2 className="k-heading-xl">Bookings and inquiries</h2>
-        <p className="k-copy k-max-copy">For tours, features, sync, and collaborations use the addresses below.</p>
+        <p className="k-overline k-reveal k-reveal-d0" data-reveal>
+          Contact
+        </p>
+        <h2 className="k-heading-xl k-reveal k-reveal-d1" data-reveal>
+          Bookings and inquiries
+        </h2>
+        <p className="k-copy k-max-copy k-reveal k-reveal-d2" data-reveal>
+          For tours, features, sync, and collaborations use the addresses below.
+        </p>
       </div>
 
-      <div className="k-contact-card k-card-elevate">
+      <div className="k-contact-card k-card-elevate k-reveal k-reveal-d3" data-reveal>
         <div>
           <p className="k-overline">Booking / Press</p>
           <a href={`mailto:${emails.booking}`} className="k-mail-link">
