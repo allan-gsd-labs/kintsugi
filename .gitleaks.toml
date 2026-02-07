@@ -1,0 +1,3 @@
+title = "allan-gsd-labs web-template gitleaks config"
+
+# Default rules are fine for now. Add allowlist rules here if we hit false positives.
